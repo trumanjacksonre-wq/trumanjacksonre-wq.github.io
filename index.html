@@ -245,46 +245,6 @@
   }
   .btn--primary:hover{ background:var(--harbor); border-color:var(--harbor); color:#fff; }
 
-  /* ============ VALUATION STRIP ============ */
-  .valuation{
-    display:block;
-    background:var(--linen-2);
-    margin:0 -28px;
-    padding:22px 28px;
-    text-decoration:none;
-    color:var(--slate);
-    transition:background .2s;
-  }
-  .valuation:hover{ background:#DCD7CD; }
-  .valuation__label{
-    font-family:var(--display);
-    font-variation-settings:"wdth" 112, "wght" 500;
-    font-size:9px;
-    letter-spacing:.22em;
-    text-transform:uppercase;
-    color:var(--harbor);
-  }
-  .valuation__line{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:14px;
-    margin-top:7px;
-  }
-  .valuation__text{
-    font-family:var(--script);
-    font-style:italic;
-    font-size:1.08rem;
-    line-height:1.3;
-  }
-  .valuation__arrow{
-    font-family:var(--body);
-    font-size:19px;
-    color:var(--sand);
-    transition:transform .2s;
-  }
-  .valuation:hover .valuation__arrow{ transform:translateX(4px); }
-
   /* ============ SOCIAL ============ */
   .social{
     display:flex;
@@ -422,15 +382,6 @@
       </a>
     </nav>
 
-    <!-- ============ VALUATION FUNNEL ============ -->
-    <a class="valuation reveal d6" id="valuationLink" href="#">
-      <div class="valuation__label">Thinking about selling</div>
-      <div class="valuation__line">
-        <div class="valuation__text">See what your home is worth today</div>
-        <div class="valuation__arrow" aria-hidden="true">&rarr;</div>
-      </div>
-    </a>
-
     <div class="social reveal d7">
       <a id="igLink" href="#" target="_blank" rel="noopener">Instagram</a>
       <a id="bioLink" href="#" target="_blank" rel="noopener">Bio</a>
@@ -466,7 +417,6 @@ const CARD = {
 
   phone:          "+13235945863",                 // E.164 format — no spaces or dashes
   email:          "trumanjacksonre@gmail.com",
-  valuationUrl:   "https://yourdomain.com/valuation",   // your seller landing page
 
   instagram:      "https://www.instagram.com/truman.jackson_/",
   bio:            "https://jenniferpurdue.com/agent/truman-jackson",       // your "Bio" link
@@ -510,19 +460,6 @@ CARD.photoBase64 = "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwM
   $("bioLink").href   = CARD.bio;
 
   $("dreLine").textContent = `${fullName}, REALTOR® · DRE #${CARD.agentDre}`;
-
-  /* ---------- Attribution: /?src=coldcall-brentwood ---------- */
-  const src = new URLSearchParams(location.search).get("src") || "direct";
-  try {
-    const v = new URL(CARD.valuationUrl);
-    v.searchParams.set("utm_source", "digital_card");
-    v.searchParams.set("utm_medium", "referral");
-    v.searchParams.set("utm_campaign", "business_card");
-    v.searchParams.set("utm_content", src.slice(0, 60));
-    $("valuationLink").href = v.toString();
-  } catch (e) {
-    $("valuationLink").href = CARD.valuationUrl;
-  }
 
   /* ---------- Toast ---------- */
   let toastTimer;
