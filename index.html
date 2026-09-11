@@ -119,19 +119,9 @@
   .ridge__top{
     position:relative;
     display:flex;
-    justify-content:space-between;
+    justify-content:flex-end;
     align-items:center;
     gap:16px;
-  }
-
-  .eyebrow{
-    font-family:var(--display);
-    font-variation-settings:"wdth" 112, "wght" 500;
-    font-size:9px;
-    letter-spacing:.26em;
-    text-transform:uppercase;
-    color:var(--slate);
-    text-shadow:0 1px 10px rgba(238,235,229,.95), 0 0 3px rgba(238,235,229,.9);
   }
 
   .share-btn{
@@ -153,7 +143,7 @@
 
   .ridge__name{
     position:relative;
-    margin-top:56px;
+    margin-top:20px;
   }
   .name{
     font-family:var(--display);
@@ -182,9 +172,9 @@
   .photo{
     position:absolute;
     left:28px;
-    top:-56px;
-    width:112px;
-    height:112px;
+    top:-66px;
+    width:132px;
+    height:132px;
     border-radius:50%;
     overflow:hidden;
     background:var(--mist-2);
@@ -204,7 +194,7 @@
   }
 
   /* ============ BODY ============ */
-  .body{ padding:70px 28px 0; }
+  .body{ padding:80px 28px 0; }
 
   .role{
     font-family:var(--display);
@@ -385,7 +375,6 @@
   <!-- ============ DAYLIGHT PLATE ============ -->
   <header class="ridge">
     <div class="ridge__top">
-      <div class="eyebrow reveal d1">Los Angeles</div>
       <button class="share-btn reveal d1" id="shareBtn" type="button">Share</button>
     </div>
 
